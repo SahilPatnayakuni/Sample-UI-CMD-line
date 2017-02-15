@@ -1,6 +1,5 @@
 import argparse
-from os import listdir
-from os.path import isfile, join
+import os
 import re
 import sys
 
@@ -15,7 +14,9 @@ parser = argparse.ArgumentParser(description='look for files that start with sim
 parser.add_argument('filepath', type=str, nargs=1)
 args = parser.parse_args()
 mypath = args.filepath[0]
-onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
+# print(mypath)
+onlyfiles = [d for d in os.listdir(mypath) if os.path.isdir(os.path.join(mypath,d))]
+# print(onlyfiles)
 pattern = re.compile('^sim')
 onlyfiles = filter(pattern.match, onlyfiles)
 for i in range(len(onlyfiles)):
@@ -33,4 +34,4 @@ while j < 0 or j > len(onlyfiles):
         j = -1
     else:
         j = int(j)
-print(re.sub("^sim|\..+",'',onlyfiles[j]))
+print(re.sub("^sim",'',onlyfiles[j]))
