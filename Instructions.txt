@@ -1,0 +1,5 @@
+I have created a separate python file for task 1 and for task 2.
+Both of them run from the command line so to run the task1.py file
+simply navigate to the folder and type python task1.py into the command
+line. Task 2 is similar in that you only need to type python task2.py "filepath"
+into the command line.

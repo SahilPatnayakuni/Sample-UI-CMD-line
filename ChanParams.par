@@ -1,0 +1,6 @@
+CHANNEL_TARGETS 4
+Branchtype
+2 f [Voltage] [Voltage, Calcium]
+3 f [Voltage] [Voltage, Calcium]
+4 f [Voltage] [Voltage, Calcium]
+6 f [Voltage] [Voltage, Calcium]
