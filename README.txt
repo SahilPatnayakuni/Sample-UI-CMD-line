@@ -37,7 +37,7 @@ d. once 'Generate' button is clicked, the GUI now enable users to add one or mor
 
 Example GUI:
 ChannelName (label): [textbox] Input (label): [dropdown list with available values are those selected in (a)] Output (label): [dropdown list with available values are those selected in (a)] ChannelType (label): [dropdown list with values from 1-7]
-Add (button)
+Add (button) 
 
 Suppose in the first stage, we chose 'Voltage' and 'Calcium' as values to 'Option' label, they become two available values to the two dropdown lists in 'Input' and 'Output' labels.
 
