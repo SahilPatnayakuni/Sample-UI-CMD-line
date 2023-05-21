@@ -1,70 +1,53 @@
-I have created a separate python file for task 1 and for task 2.
-Both of them run from the command line so to run the task1.py file
-simply navigate to the folder and type python task1.py into the command
-line. Task 2 is similar in that you only need to type python task2.py "filepath"
-into the command line.
-This can also be opened in PyCharm, which is what I used to write it
-Summary of tasks:
-Task 1. A (simple) GUI interface that enable users 
-a. to select one or more options (Voltage, Calcium, CalciumER) from drop-down list
-b. to input a number in 'how many BRANCHTYPE' (acceptable value in the range 1-7)
-c. a 'Generate' button 
+Video Game Review Emotion Aggregator
 
-Example of GUI:
-Options (label) : [ dropdown list]
-How many BRANCHTYPE (label): [textbox input] (with code to check valid input)
-Generate (button)
+This project aims to create a web-based video game review aggregator using Flask, React, and SQL. The application allows users to browse and search for video game reviews based on emotions and provides an aggregated rating for each game.
+Features
 
-Once user press the button 'Generate', it creates an output file: CptParams.par
+    User Registration and Authentication: Users can create accounts, log in, and manage their profiles.
+    Game Search: Users can search for games by title, genre, or platform.
+    Review Aggregation: The application collects reviews from different sources and calculates an aggregated rating for each game.
+    User Reviews: Registered users can write their own reviews and rate games. Reviews must include an emotional rating for the following emotions (Happy, Sad, Angry, Fearful, Disgust)
+    Sorting and Filtering: Users can sort and filter game reviews based on various criteria such as rating, release date, and platform.
+    Social Features: Users can follow other users, like and comment on reviews, and share reviews on social media platforms.
 
-Example: Suppose 'Voltage' and 'Calcium' are selected, and 2 is chosen as 'how many BRANCHTYPE', it generate 4 lines
-COMPARTMENT_VARIABLE_TARGETS 2
-BRANCHTYPE
-1 Voltage Calcium
-2 Voltage Calcium
+Technologies Used
 
+    Backend: Flask (Python)
+    Frontend: React (JavaScript)
+    Database: SQL (e.g., PostgreSQL, MySQL)
 
-Example: Suppose 'Voltage' and 'CalciumER' are selected, and 3 is chosen as 'how many BRANCHTYPE', it generate 5 lines
-COMPARTMENT_VARIABLE_TARGETS 3
-BRANCHTYPE
-1 Voltage CalciumER
-2 Voltage CalciumER
-3 Voltage CalciumER
+Prerequisites
 
+To run this project locally, ensure you have the following software installed:
 
+    Python 3.x
+    SQL database server (e.g., PostgreSQL)
 
-d. once 'Generate' button is clicked, the GUI now enable users to add one or more items with 3 inputs and 1 button as given
+Getting Started
 
-Example GUI:
-ChannelName (label): [textbox] Input (label): [dropdown list with available values are those selected in (a)] Output (label): [dropdown list with available values are those selected in (a)] ChannelType (label): [dropdown list with values from 1-7]
-Add (button) 
+    Clone the repository:
 
-Suppose in the first stage, we chose 'Voltage' and 'Calcium' as values to 'Option' label, they become two available values to the two dropdown lists in 'Input' and 'Output' labels.
+bash
 
-Example: Now, if users input 'Na' to 'ChannelName', and select 'Voltage' as value to Input; and both 'Voltage', 'Calcium' as values to Output; and values '1', '3' to ChannelType.
-Once 'Add' button is pressed, it create an output file named ChanParams.par with the following content (NOTE: square brackets are used to enclose values chosen in Input and Output labels, with comma as separator)
+git clone https://github.com/your-username/Video-Game-Review-Emotion.git
 
-CHANNEL_TARGETS 2
-BRANCHTYPE
-1 Na [Voltage] [Voltage, Calcium]
-3 Na [Voltage] [Voltage, Calcium]
+    Set up the backend:
+        Navigate to the backend directory: cd video-game-review-aggregator/backend
+        Create a virtual environment: python3 -m venv venv
+        Activate the virtual environment:
+            On macOS/Linux: source venv/bin/activate
+            On Windows: venv\Scripts\activate.bat
+        Install the required Python packages: pip install -r requirements.txt
+        Set up the database:
+            Create a new database in your SQL server.
+            Update the database configuration in config.py.
+            Run database migrations: flask db upgrade
+        Start the backend server: flask run
 
+    Set up the frontend:
+        Navigate to the frontend directory: cd video-game-review-aggregator/frontend
+        Install the required Node packages: npm install
+        Start the frontend development server: npm start
 
-Example: If users input 'Na' to 'ChannelName', and select both 'Voltage', 'Calcium' as values to Input; and both 'Voltage', 'Calcium' as values to Output; and values '1', '3' to ChannelType. Once 'Add' button is pressed, it create an output file named ChanParams.par with the following content (NOTE: square brackets are used to enclose values chosen in Input and Output labels, with comma as separator)
-
-CHANNEL_TARGETS 2
-BRANCHTYPE
-1 Na [Voltage, Calcium] [Voltage, Calcium]
-3 Na [Voltage, Calcium] [Voltage, Calcium]
-
-
-Task 2. Write a Linux bash script (or Python script): suppose you have a few sub-folders (dataA, simA, simB, and simC) inside folder 'targetA', write a script that accept path to 'targetA' as first argument, then display only folders with prefix 'sim', and the option for user to select one folder (e.g. by displaying a number associated to that folder), for example
-
-Select one of this:
-0 simA
-1 simB
-2 simC
-Type in the number?
-
-Keep printing 'Type in the number?' until users select a value in the proper range (e.g. 0-2 in this case)
-Once user select a folder, print out the suffix of that folder (with prefix as 'sim'), e.g. if 'simA' is selected, then print out 'A', and exit the script.
+    Access the application:
+        Open your web browser and visit http://localhost:3000 to access the video game review aggregator.
