@@ -29,7 +29,7 @@ Getting Started
 
 bash
 
-git clone https://github.com/your-username/Video-Game-Review-Emotion.git
+git clone https://github.com/SahilPatnayakuni/Video_Game_Review_Emotion.git
 
     Set up the backend:
         Navigate to the backend directory: cd video-game-review-aggregator/backend
